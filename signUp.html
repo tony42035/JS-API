@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊 ｜ ONLINE TODO LIST</title>
+    <link rel="stylesheet" href="./stylesheet/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap"
+        rel="stylesheet">
+        
+</head>
+<body>
+    <div class="bg-primary vh-100 vw-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 col-12">
+                        <div class="col-12 d-flex align-items-center justify-content-center mb-3">
+                                <img src="./images/check (1) 1.svg" alt="" >
+                                <span class="en display-7">ONLINE TODO LIST</span>
+                        </div>
+                        <div class="col d-none d-lg-flex  align-items-center justify-content-center">
+                            <img src="./images/img.png" class="img-fluid" alt="">
+                        </div>
+                </div>
+                <div class="col-lg-3 col-8 d-flex align-items-center">
+                    <form class="row">
+                        <div class="col-12 text-start pb-3">
+                            <h2 class="tc display-8 text-nowrap">註冊帳號</h2>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <label for="myEmail" class="form-label tc">Email</label>
+                            <input type="email" id="myEmail" class="form-control tc" placeholder="請輸入 Email" required>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <label for="myNickName" class="form-label tc">您的暱稱</label>
+                            <input type="text" id="myNickName" class="form-control tc" placeholder="請輸入您的暱稱" required>
+                        </div>
+                        <div class="col-12 my-2">
+                            <label for="myPW" class="form-label">密碼</label>
+                            <input type="password" id="myPW" class="form-control tc" placeholder="請輸入密碼" required>
+                        </div>
+                        <div class="col-12 my-2">
+                            <label for="myPWAgain" class="form-label">再次輸入密碼</label>
+                            <input type="password" id="myPWAgain" class="form-control tc" placeholder="請再次輸入密碼" required>
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-secondary tc px-5" id="signUpBtn">註冊帳號</button>
+                        </div>
+                        <div class="col-12 text-center my-2">
+                            <a href="./index.html" class="text-secondary tc text-decoration-none">登入</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./js/signUp.js" type="module"></script>
+
+</body>
+</html>

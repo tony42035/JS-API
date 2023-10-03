@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的待辦事項 ｜ ONLINE TODO LIST</title>
+    <link rel="stylesheet" href="./stylesheet/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700&family=Noto+Sans+TC:wght@400;700&display=swap"
+        rel="stylesheet">
+        
+</head>
+<body style="background: linear-gradient(173deg, #FFD370 5.12%, #FFD370 53.33%, #FFD370 53.44%, #FFF 53.45%, #FFF 94.32%);">
+    <div class="vh-100 vw-100">
+        <header class="py-4 px-5 d-flex">
+            <div class="logo d-flex align-items-center">
+                <img src="./images/check (1) 1.svg" alt="">
+                <span class="en display-7">ONLINE TODO LIST</span>
+            </div>
+            <div class="ms-auto d-flex align-items-center">
+                <span class="userName tc fw-bold me-3"></span>
+                <a href="#" class="text-secondary tc text-decoration-none logOut">登出</a>
+            </div>
+        </header>
+        <section class="container">
+            <div class="row justify-content-center">
+                <div class="col-6 mb-5">
+                        <div class="position-relative">
+                            <input type="text" class="form-control form-control-lg" placeholder="新增待辦事項">
+                            <a href="#" class="plusTodo">
+                                <img src="./images/plus.svg" class="position-absolute translate-middle top-50 end-0" alt="">
+                            </a>
+                        </div>
+                </div>
+                <div class="d-none" id="noList">
+                    <p class="tc display-8 mb-5">目前尚無待辦事項</p>
+                    <img src="./images/empty 1.png" alt="">
+                </div>
+            </div>
+        </section>
+    
+
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./js/mylist.js" type="module"></script>
+</body>
+</html>

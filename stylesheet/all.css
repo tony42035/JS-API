@@ -93,11 +93,11 @@
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: inherit;
-  --bs-link-color: #FFD370;
-  --bs-link-color-rgb: 255, 211, 112;
+  --bs-link-color: #333333;
+  --bs-link-color-rgb: 51, 51, 51;
   --bs-link-decoration: underline;
-  --bs-link-hover-color: #cca95a;
-  --bs-link-hover-color-rgb: 204, 169, 90;
+  --bs-link-hover-color: #292929;
+  --bs-link-hover-color-rgb: 41, 41, 41;
   --bs-code-color: #d63384;
   --bs-highlight-color: #212529;
   --bs-highlight-bg: #fff3cd;
@@ -3312,7 +3312,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #6c757d;
   --bs-btn-disabled-border-color: transparent;
   --bs-btn-box-shadow: 0 0 0 #000;
-  --bs-btn-focus-shadow-rgb: 217, 179, 95;
+  --bs-btn-focus-shadow-rgb: 82, 82, 82;
   text-decoration: underline;
 }
 .btn-link:focus-visible {

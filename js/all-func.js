@@ -19,7 +19,7 @@ export function signIn(email,password){
                 localStorage.clear();
                 localStorage.setItem("authorization",response.headers.authorization);
                 localStorage.setItem("nickName",response.data.nickname);
-                window.location.replace("../myList.html");
+                location.replace("../myList.html");
             })
     })
     .catch (error => {
@@ -27,7 +27,7 @@ export function signIn(email,password){
             '登入失敗',
             '請檢查帳號及密碼',
             'error')
-            .then(res => window.location.reload())
+            .then(res => location.reload())
     })
 }
 
@@ -41,7 +41,6 @@ export function getTodos (){
     })
         .then (response => {
             if(response.data.todos.length == 0){
-                console.log("0000");
                 return 100
             }
             // console.log(response.data.todos.length);
@@ -59,10 +58,20 @@ export function addTodo(newTodo){
         }
     },{
         headers:{
-            'Authorization': token
+            'Authorization': localStorage.getItem("authorization")
         }
     })
-    .then(response => console.log(response))
+    .then(response => {
+        swal.fire (
+            {
+                position: 'center',
+                icon: 'success',
+                title: '新增待辦事項成功',
+                showConfirmButton: false,
+                timer: 1000
+            }
+        ).then (resulte => location.reload())
+    })
     .catch(error => console.log(error.response))
 }
 
@@ -76,24 +85,55 @@ export function updateTodo(id,content){
         }
     },{
         headers:{
-            'Authorization': token
+            'Authorization': localStorage.getItem("authorization")
         }
     })
-    .then(response => console.log(response))
+    .then(response => {
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '修改成功！',
+            showConfirmButton: false,
+            timer: 1000
+        }).then ( res => location.reload())
+    })
     .catch(error => console.log(error.response))
 }
 
 
 //刪除todo
 export function delTodo (id){
-    axios.delete(`${apiUrl}/todos/${id}`,
-    {
-        headers:{
-            'Authorization': token
+
+
+    Swal.fire({
+        title: '確定要刪除嗎?',
+        text: "刪除之後無法復原喔！",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: '不，不要刪除',
+        confirmButtonText: '確定！刪掉它吧！'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            axios.delete(`${apiUrl}/todos/${id}`,
+            {
+                headers:{
+                    'Authorization': localStorage.getItem("authorization")
+                }
+            })
+            .then(response => {
+                Swal.fire(
+                    '刪除完成！',
+                    '待辦事項成功刪除囉！',
+                    'success'
+                ).then(res => location.reload())
+            })
+            .catch(error => console.log(error.response))            
         }
     })
-    .then(response => console.log(response))
-    .catch(error => console.log(error.response))
+
+
 }
 
 
@@ -102,7 +142,7 @@ export function toggleTodo(id){
     axios.patch(`${apiUrl}/todos/${id}/toggle`,{},
     {
         headers:{
-            'Authorization': token
+            'Authorization': localStorage.getItem("authorization")
         }
     })
     .then(response => console.log(response))
@@ -128,7 +168,7 @@ export function signUp(email,nickname,password){
             localStorage.clear();
             localStorage.setItem("authorization",response.headers.authorization);
             localStorage.setItem("nickName",response.data.nickname);
-            window.location.replace("../myList.html");
+            location.replace("../myList.html");
         })
     })
     .catch ( error => {
@@ -157,7 +197,6 @@ export function checkStatus (){
         }
     })
     .then (response => {
-        console.log ("歡迎登入！！！！")
         // console.log(response)
     })
     .catch (error => {
@@ -166,6 +205,6 @@ export function checkStatus (){
             '請重新登入',
             '',
             'error'
-        ).then(res => window.location.replace("../index.html"))
+        ).then(res => location.replace("../index.html"))
     })
 }

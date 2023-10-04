@@ -6,6 +6,8 @@ const myPW = document.querySelector('#myPW');
 const myPWAgain = document.querySelector ('#myPWAgain');
 const signUpBtn = document.querySelector('#signUpBtn');
 
+checkStatus();
+
 signUpBtn.addEventListener ('click', e =>{
     e.preventDefault();
     let email = myEmail.value;
@@ -29,7 +31,22 @@ signUpBtn.addEventListener ('click', e =>{
     }else{
         signUp(email,nickName,pw);
     }
-
-    
 })
 
+function checkStatus (){
+    // console.log(localStorage.getItem("authorization"));
+    axios.get (`${apiUrl}/check`,{
+        headers:{
+            'Authorization': localStorage.getItem("authorization")
+        }
+    })
+    .then (response => {
+        swal.fire(
+            '您已經登入',
+            '返回待辦事項',
+            'info'
+        ).then(res => location.replace("../myList.html"))
+        // console.log(response)
+    })
+    .catch (error => console.log(error.response) )
+}

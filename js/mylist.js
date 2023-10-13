@@ -140,7 +140,7 @@ logOutBtn.addEventListener ('click', e=> {
             '期待您下次的到來',
             'success'
         ).then(resulte => {
-            window.location.replace("./index.html");
+            location.replace("./index.html");
         })
         // console.log("已登出")
     })

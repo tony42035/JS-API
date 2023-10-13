@@ -19,7 +19,7 @@ export function signIn(email,password){
                 localStorage.clear();
                 localStorage.setItem("authorization",response.headers.authorization);
                 localStorage.setItem("nickName",response.data.nickname);
-                location.replace("../myList.html");
+                location.replace("./myList.html");
             })
     })
     .catch (error => {
@@ -168,7 +168,7 @@ export function signUp(email,nickname,password){
             localStorage.clear();
             localStorage.setItem("authorization",response.headers.authorization);
             localStorage.setItem("nickName",response.data.nickname);
-            location.replace("../myList.html");
+            location.replace("./myList.html");
         })
     })
     .catch ( error => {
@@ -205,6 +205,6 @@ export function checkStatus (){
             '請重新登入',
             '',
             'error'
-        ).then(res => location.replace("../index.html"))
+        ).then(res => location.replace("./index.html"))
     })
 }

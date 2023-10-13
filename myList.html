@@ -22,13 +22,13 @@
                 <span class="en display-7">ONLINE TODO LIST</span>
             </div>
             <div class="ms-auto d-flex align-items-center">
-                <span class="userName tc fw-bold me-3"></span>
+                <span class="userName tc fw-bold me-3 d-none d-lg-block"></span>
                 <a href="#" class="text-secondary tc text-decoration-none logOut">登出</a>
             </div>
         </header>
         <section class="container">
             <div class="row justify-content-center flex-column align-items-center">
-                <div class="col-6 mb-5">
+                <div class="col-lg-6 col-11 mb-5">
                         <div class="position-relative shadow">
                             <input type="text" class="form-control form-control-lg todoText" placeholder="新增待辦事項">
                             <a href="#" class="plusTodo">
@@ -38,13 +38,14 @@
                 </div>
 
                 <!-- 沒有列表時顯示的文字圖案 -->
-                <div class="d-none" id="noList">
+                <div class="d-none col-lg-6 col-11" id="noList">
                     <p class="tc display-8 mb-5">目前尚無待辦事項</p>
                     <img src="./images/empty 1.png" alt="">
                 </div>
 
                 <!-- 顯示項目列表 -->
-                <div class="col-6 d-none" id="haveList">
+                <!-- 全部列表    -->
+                <div class="col-lg-6 col-11 d-none" id="haveList">
                     <div class="shadow-lg">
                         <ul class="nav nav-tabs bg-white rounded-top nav-fill border-bottom border-2" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -64,27 +65,31 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                                 <ul class="list-unstyled p-4 all-list">
-                                    <!-- 要render的 li 開頭 -->
-                                    <!-- <li class="border-bottom mb-3 pb-2 d-flex align-items-center form-check form-check-inline">
-                                        <input class="form-check-input me-3" type="checkbox" id="inlineCheckbox1" value="option1">
-                                        <label class="me-auto form-check-label display-8 tc" for="inlineCheckbox1">10/10 記得刷牙唷</label>
-                                        <a href="#" class="mx-3">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                        <a href="#">
-                                            <img src="./images/close (1) 1.svg" alt="">
-                                        </a>    
-                                    </li> -->
-                                    <!-- 要render的li 結尾 -->
+                                        <!-- 列表內容
+                                        ...
+                                        ...
+                                        render -->
                                 </ul>
                                 
                             </div>
+
+                            <!-- 待完成列表 -->
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <ul class="list-unstyled p-4 notYet">
+                                    <!-- 列表內容
+                                        ...
+                                        ...
+                                        render -->
                                 </ul>
                             </div>
+
+                            <!-- 已完成列表 -->
                             <div class="tab-pane fade " id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <ul class="list-unstyled p-4 done">
+                                    <!-- 列表內容
+                                        ...
+                                        ...
+                                        render -->
                                 </ul>
                             </div>
 
@@ -92,13 +97,16 @@
                             <div class="d-flex p-3">
                                 <div class="footerTotal tc">X個待完成事項</div>
                                 <div class="ms-auto">
-                                    <a href="#" class="text-decoration-none link-danger tc">清除已完成項目</a>
+                                    <a href="#" class="text-decoration-none link-danger tc clear-done">清除已完成項目</a>
                                 </div>
                             </div>
                             
                         </div>
+
                     </div>
                 </div>
+
+
 
             </div>
         </section>

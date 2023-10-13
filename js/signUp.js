@@ -45,7 +45,7 @@ function checkStatus (){
             '您已經登入',
             '返回待辦事項',
             'info'
-        ).then(res => location.replace("../myList.html"))
+        ).then(res => location.replace("./myList.html"))
         // console.log(response)
     })
     .catch (error => console.log(error.response) )
